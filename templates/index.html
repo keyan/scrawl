@@ -2,6 +2,17 @@
 <html>
 <head>
     <script src="static/js/paper.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+        socket.on('connect', function() {
+            socket.emit('event');
+        });
+        // socket.on('client draw circle', function(data) {
+        //     console.log('this happening')
+        //     drawCircle(data);
+        // });
+    </script>
 </head>
 <body>
     <canvas id="draw" resize="true"></canvas>
