@@ -20,7 +20,7 @@ def handle_connect():
 def draw_circle(data):
     print ('Server received a circle')
     emit('client draw circle', data)
-    # TODO: not redraw if sent by origin
+
 
 if __name__ == '__main__':
-    socketio.run(app)
+    socketio.run(app, host='0.0.0.0')

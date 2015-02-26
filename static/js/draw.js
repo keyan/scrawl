@@ -27,15 +27,15 @@ function onMouseDown(event) {
 
 function onMouseDrag(event) {
     if(Key.isDown('a')) {
+        myPath.add(event.point);
+    }
+    else {
         var color = randomColor();
         var x = event.middlePoint.x;
         var y = event.middlePoint.y;
         var radius = event.delta.length / 2;
         //drawCircle(x, y, radius, color);
         emitCircle(x, y, radius, color);
-    }
-    else {
-        myPath.add(event.point);
     }
 } 
  
@@ -56,11 +56,10 @@ function emitCircle(x, y, radius, color) {
     };
 
     socket.emit('draw circle', data);
-    // View the sent data in the browser console.
     console.log(data)
 }
 
 socket.on('client draw circle', function(data) {
-    console.log('this happening')
-    drawCircle(data);
+    console.log('Drawing circle')
+    drawCircle(data.x, data.y, data.radius, data.color);
 });
