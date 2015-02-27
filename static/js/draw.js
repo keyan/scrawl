@@ -46,8 +46,6 @@ function drawCircle( x, y, radius, color ) {
 } 
  
 function emitCircle(x, y, radius, color) {
-  
-    // An object to describe the circle's draw data.
     var data = {
         x:x,
         y:y,
