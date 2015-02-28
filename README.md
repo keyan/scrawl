@@ -1,5 +1,5 @@
 # scrawl
-A collaborative drawing game/app written so I could learn more about Javascript. Drawings are shared with all other users who are accessing the app. Built with Javascript, [Paper.js], [Flask-SocketIO], and [Flask]. Running on and EC2 micro-instance using [gunicorn].
+A collaborative drawing game/app written so I could learn more about Javascript. Drawings are shared with all other users who are accessing the app. Built with Javascript, [Paper.js], [Flask-SocketIO], and [Flask]. Running on an EC2 micro-instance using [gunicorn].
 
 ### Requirements
 - A modern browser
@@ -10,6 +10,7 @@ A collaborative drawing game/app written so I could learn more about Javascript.
 3. Obtain fun!
 
 The command line that starts the server is:
+
 ```gunicorn --worker-class socketio.sgunicorn.GeventSocketIOWorker app:app -p 0.0.0.0:80```
 
 ### TODO
