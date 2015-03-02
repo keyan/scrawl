@@ -34,7 +34,7 @@ function onMouseDrag(event) {
         var x = event.middlePoint.x;
         var y = event.middlePoint.y;
         var radius = event.delta.length / 2;
-        //drawCircle(x, y, radius, color);
+        drawCircle(x, y, radius, color);
         emitCircle(x, y, radius, color);
     }
 } 
